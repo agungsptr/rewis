@@ -12,30 +12,33 @@
     <h1>add</h1><br>
     <form action="../controller/AddController.php" method="POST" enctype="multipart/form-data">
         Nama Tempat :
-        <input type="text" name="nama_tempat"><br>
+        <input required type="text" name="nama_tempat"><br>
+
+        Foto : 
+        <input required type="file" name="foto"><br>
 
         Jarak <br>
-        mtr : <input type="text" name="j_mtr"><br>
-        klu : <input type="text" name="j_klu"><br>
-        lobar : <input type="text" name="j_lobar"><br>
-        lotim : <input type="text" name="j_lotim"><br>
-        loteng : <input type="text" name="j_loteng"><br>
+        mtr : <input required type="text" name="j_mtr"><br>
+        klu : <input required type="text" name="j_klu"><br>
+        lobar : <input required type="text" name="j_lobar"><br>
+        lotim : <input required type="text" name="j_lotim"><br>
+        loteng : <input required type="text" name="j_loteng"><br>
         <br>
 
         Biaya <br>
-        mtr : <input type="text" name="b_mtr"><br>
-        klu : <input type="text" name="b_klu"><br>
-        lobar : <input type="text" name="b_lobar"><br>
-        lotim : <input type="text" name="b_lotim"><br>
-        loteng : <input type="text" name="b_loteng"><br>
+        mtr : <input required type="text" name="b_mtr"><br>
+        klu : <input required type="text" name="b_klu"><br>
+        lobar : <input required type="text" name="b_lobar"><br>
+        lotim : <input required type="text" name="b_lotim"><br>
+        loteng : <input required type="text" name="b_loteng"><br>
         <br>
 
         Waktu <br>
-        mtr : <input type="text" name="w_mtr"><br>
-        klu : <input type="text" name="w_klu"><br>
-        lobar : <input type="text" name="w_lobar"><br>
-        lotim : <input type="text" name="w_lotim"><br>
-        loteng : <input type="text" name="w_loteng"><br>
+        mtr : <input required type="text" name="w_mtr"><br>
+        klu : <input required type="text" name="w_klu"><br>
+        lobar : <input required type="text" name="w_lobar"><br>
+        lotim : <input required type="text" name="w_lotim"><br>
+        loteng : <input required type="text" name="w_loteng"><br>
         <br>
 
         User : <input type="text" readonly name="user" value="1">

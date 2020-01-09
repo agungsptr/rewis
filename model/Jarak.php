@@ -1,5 +1,5 @@
 <?php
-require('base/model.php');
+require_once('base/model.php');
 
 class Jarak extends Model {
     public $table = 'jarak';

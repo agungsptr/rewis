@@ -1,14 +1,14 @@
 <?php
-require('base/model.php');
+require_once('base/model.php');
 
 class Waktu extends Model {
     public $table = 'waktu';
 
-    public $mtr ='';
-    public $lobar ='';
-    public $lotim ='';
-    public $loteng ='';
-    public $klu ='';
+    public $mtr;
+    public $lobar;
+    public $lotim;
+    public $loteng;
+    public $klu;
 
     public function save()
     {

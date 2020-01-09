@@ -1,35 +1,49 @@
 <?php
-require('../model/Biaya.php');
-require('../model/Jarak.php');
-require('../model/Waktu.php');
-require('../model/TempatWisata.php');
+require_once('../model/Biaya.php');
+require_once('../model/Waktu.php');
+require_once('../model/Jarak.php');
+require_once('../model/TempatWisata.php');
 
 $biaya = new Biaya;
-$biaya->mtr=99;
-$biaya->klu=99;
-$biaya->lobar=99;
-$biaya->lotim=99;
-$biaya->loteng=99;
+$biaya->mtr = $_POST['b_mtr'];
+$biaya->klu = $_POST['b_klu'];;
+$biaya->lobar = $_POST['b_lobar'];;
+$biaya->lotim = $_POST['b_lotim'];;
+$biaya->loteng = $_POST['b_loteng'];;
 $biaya->save();
-$id_biaya = $biaya->lastId();
+$idBiaya = $biaya->lastId();
 
 $waktu = new Waktu;
-$waktu->mtr=99;
-$waktu->klu=99;
-$waktu->lobar=99;
-$waktu->lotim=99;
-$waktu->loteng=99;
+$waktu->mtr = $_POST['w_mtr'];
+$waktu->klu = $_POST['w_klu'];;
+$waktu->lobar = $_POST['w_lobar'];;
+$waktu->lotim = $_POST['w_lotim'];;
+$waktu->loteng = $_POST['w_loteng'];;
 $waktu->save();
-$id_waktu = $waktu->lastId();
+$idWaktu = $waktu->lastId();
 
 $jarak = new Jarak;
-$jarak->mtr=99;
-$jarak->klu=99;
-$jarak->lobar=99;
-$jarak->lotim=99;
-$jarak->loteng=99;
+$jarak->mtr = $_POST['j_mtr'];
+$jarak->klu = $_POST['j_klu'];;
+$jarak->lobar = $_POST['j_lobar'];;
+$jarak->lotim = $_POST['j_lotim'];;
+$jarak->loteng = $_POST['j_loteng'];;
 $jarak->save();
-$id_jarak = $jarak->lastId();
+$idJarak = $jarak->lastId();
+
+$tmp_file = $_FILES['foto']['tmp_name'];
+$path = "img/" . $_FILES['foto']['name'];
+$upload = move_uploaded_file($tmp_file, "../" . $path);
 
 $tempat = new TempatWisata;
-$tempat->
+$tempat->nama_tempat = $_POST['nama_tempat'];
+$tempat->id_user = $_POST['user'];
+$tempat->id_jarak = $idJarak;
+$tempat->id_biaya = $idBiaya;
+$tempat->id_waktu = $idWaktu;
+$tempat->foto = $path;
+$tempat->save();
+
+echo "jarak: " . $idJarak . "</br>";
+echo "waktu: " . $idWaktu . "</br>";
+echo "biaya: " . $idBiaya . "</br>";
