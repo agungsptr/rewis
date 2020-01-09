@@ -14,6 +14,9 @@
         Nama Tempat :
         <input required type="text" name="nama_tempat"><br>
 
+        Deskripsi : <br>
+        <textarea name="deskripsi" cols="50" rows="10"></textarea><br>
+
         Foto : 
         <input required type="file" name="foto"><br>
 

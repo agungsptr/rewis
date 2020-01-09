@@ -3,8 +3,10 @@ require('connection.php');
 
 class Model extends Connection
 {
-    public $table = '';
-    public $atributs = [];
+    public $table;
+    public $atributs;
+    public $val;
+    public $fid;
 
     public function all()
     {
@@ -59,5 +61,18 @@ class Model extends Connection
         } else {
             return "Error input data, silahkan cek kembali";
         }
+    }
+
+    public function update($id)
+    {
+        $query = "UPDATE $this->table SET $this->val WHERE $this->fid=$id";
+        $do = mysqli_query(parent::DoCon(), $query);
+        
+        if ($do) {
+            return $do;
+        } else {
+            return "Error input data, silahkan cek kembali";
+        }
+
     }
 }
