@@ -75,4 +75,11 @@ class Model extends Connection
         }
 
     }
+
+    public function delete($id)
+    {
+        $query = "DELETE FROM $this->table WHERE id=$id";
+        return mysqli_query(parent::DoCon(), $query);
+    }
+
 }

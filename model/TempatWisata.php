@@ -4,20 +4,19 @@ require_once('base/model.php');
 class TempatWisata extends Model {
     public $table = 'tempat_wisata';
     public $nama_tempat;
-    public $deskripsi;
     public $foto;
     public $id_user;
 
     public function save()
     {
-        $this->atributs = ["'$this->nama_tempat'", "'$this->deskripsi'", "'$this->foto'", $this->id_user];
+        $this->atributs = ["'$this->nama_tempat'", "'$this->foto'", $this->id_user];
         return parent::save();
     }
 
     public function update($id)
     {
         $this->fid = 'id';
-        $this->val = "nama_tempat='$this->nama_tempat', deskripsi='$this->deskripsi', foto='$this->foto', id_user=$this->id_user";
+        $this->val = "nama_tempat='$this->nama_tempat', foto='$this->foto', id_user=$this->id_user";
         return parent::update($id);
     }
 

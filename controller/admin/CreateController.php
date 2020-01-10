@@ -1,17 +1,16 @@
 <?php
-require_once('../model/Biaya.php');
-require_once('../model/Waktu.php');
-require_once('../model/Jarak.php');
-require_once('../model/TempatWisata.php');
+require_once('../../model/Biaya.php');
+require_once('../../model/Waktu.php');
+require_once('../../model/Jarak.php');
+require_once('../../model/TempatWisata.php');
 
 $tmp_file = $_FILES['foto']['tmp_name'];
 $path = "img/" . $_FILES['foto']['name'];
-$upload = move_uploaded_file($tmp_file, "../" . $path);
+$upload = move_uploaded_file($tmp_file, "../../" . $path);
 
 $tempat = new TempatWisata;
 $tempat->nama_tempat = $_POST['nama_tempat'];
 $tempat->id_user = $_POST['user'];
-$tempat->deskripsi = $_POST['deskripsi'];
 $tempat->foto = $path;
 $tempat->save();
 $id_tw = $tempat->lastId();
@@ -43,4 +42,4 @@ $jarak->loteng = $_POST['j_loteng'];
 $jarak->id_tw = $id_tw;
 $jarak->save();
 
-echo "huhuh";
+header('location:../../view/admin/');

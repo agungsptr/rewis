@@ -13,4 +13,17 @@ class User extends Model {
         $this->atributs = ["'$this->nama'", "'$this->username'", "'$this->password'"];
         return parent::save();
     }
+
+    public function name($id)
+    {
+        $do = parent::where('id', $id);
+        $result = mysqli_fetch_assoc($do);
+        return $result['nama'];
+    }
+
+    public function login($username, $password)
+    {
+        $query = "SELECT * FROM $this->table WHERE username='$username' AND password='$password'";
+        return mysqli_query(parent::DoCon(), $query);
+    }
 }
