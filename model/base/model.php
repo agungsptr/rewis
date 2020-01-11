@@ -54,6 +54,7 @@ class Model extends Connection
         }
 
         $query = "INSERT INTO $this->table VALUES ($values)";
+        var_dump($query);
         $do = mysqli_query(parent::DoCon(), $query);
         
         if ($do) {
@@ -79,6 +80,12 @@ class Model extends Connection
     public function delete($id)
     {
         $query = "DELETE FROM $this->table WHERE id=$id";
+        return mysqli_query(parent::DoCon(), $query);
+    }
+
+    public function like($field1, $field2)
+    {
+        $query = "SELECT * FROM $this->table WHERE $field1 LIKE '%$field2%' ORDER BY $field1 ";
         return mysqli_query(parent::DoCon(), $query);
     }
 

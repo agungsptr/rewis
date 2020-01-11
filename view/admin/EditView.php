@@ -7,8 +7,6 @@ if (!isset($_SESSION['login'])) {
 ?>
 
 <?php
-require_once('../../model/Biaya.php');
-require_once('../../model/Waktu.php');
 require_once('../../model/Jarak.php');
 require_once('../../model/TempatWisata.php');
 
@@ -17,23 +15,15 @@ $data_tw = $tempat->where('id', $_GET['id']);
 $data_tw = mysqli_fetch_assoc($data_tw);
 $id = $data_tw['id'];
 
-$biaya = new Biaya;
-$data_biaya = $biaya->where('id_tw', $id);
-$data_biaya = mysqli_fetch_assoc($data_biaya);
-
 $jarak = new Jarak;
 $data_jarak = $jarak->where('id_tw', $id);
 $data_jarak = mysqli_fetch_assoc($data_jarak);
-
-$waktu = new Waktu;
-$data_waktu = $waktu->where('id_tw', $id);
-$data_waktu = mysqli_fetch_assoc($data_waktu);
 ?>
 
 <div class="container mt-3">
     <div class="row justify-content-center">
         <div class="col-8">
-            <div class="card shadow">
+            <div class="card shadow mb-3">
                 <div class="card-header">
                     <h5>Edit Data Tempat Wisata</h5>
                 </div>
@@ -46,6 +36,21 @@ $data_waktu = mysqli_fetch_assoc($data_waktu);
                         </div>
 
                         <div class="form-group">
+                            <label for="">Kabupaten</label>
+                            <input value="<?= $data_tw['kab'] ?>" class="form-control" required type="text" name="kab">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="">Alamat</label>
+                            <input value="<?= $data_tw['alamat'] ?>" class="form-control" required type="text" name="alamat">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="">Deskripsi</label>
+                            <textarea name="deskripsi" id="" class="form-control" rows="3"><?= $data_tw['deskripsi'] ?></textarea>
+                        </div>
+
+                        <div class="form-group">
                             <label for="">Foto</label>
                             <div class="custom-file">
                                 <input type="file" value="<?= $data_tw['foto'] ?>" class="custom-file-input" id="customFile" name="foto">
@@ -53,51 +58,44 @@ $data_waktu = mysqli_fetch_assoc($data_waktu);
                             </div>
                         </div>
 
-                        <div class="form-group mt-4">
+                        <div class="form-group">
+                            <label for="">Jumlah Fasilitas</label>
+                            <input type="number" name="fasilitas" class="form-control" value="<?= $data_tw['fasilitas'] ?>">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="">Biaya Masuk</label>
+                            <input type="number" name="biaya" class="form-control" value="<?= $data_tw['biaya'] ?>">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="">Jarak Tempat Wisata dari</label>
                             <table class="table table-striped table-bordered table-hover">
                                 <thead>
                                     <tr>
-                                        <th></th>
-                                        <th>Mataram</th>
-                                        <th>KLU</th>
-                                        <th>LOBAR</th>
-                                        <th>LOTIM</th>
-                                        <th>LOTENG</th>
+                                        <th style="width: 18%;">Mataram</th>
+                                        <th>Lombok Utara</th>
+                                        <th>Lombok Barat</th>
+                                        <th>Lombok Timur</th>
+                                        <th style="width: 22%;">Lombok Tengah</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <th>Jarak</th>
                                         <td><input class="form-control" value="<?= $data_jarak['mataram'] ?>" required type="text" name="j_mtr"></td>
                                         <td><input class="form-control" value="<?= $data_jarak['klu'] ?>" required type="text" name="j_klu"></td>
                                         <td><input class="form-control" value="<?= $data_jarak['lobar'] ?>" required type="text" name="j_lobar"></td>
                                         <td><input class="form-control" value="<?= $data_jarak['lotim'] ?>" required type="text" name="j_lotim"></td>
                                         <td><input class="form-control" value="<?= $data_jarak['loteng'] ?>" required type="text" name="j_loteng"></td>
                                     </tr>
-                                    <tr>
-                                        <th>Waktu</th>
-                                        <td><input class="form-control" value="<?= $data_waktu['mataram'] ?>" required type="text" name="w_mtr"></td>
-                                        <td><input class="form-control" value="<?= $data_waktu['klu'] ?>" required type="text" name="w_klu"></td>
-                                        <td><input class="form-control" value="<?= $data_waktu['lobar'] ?>" required type="text" name="w_lobar"></td>
-                                        <td><input class="form-control" value="<?= $data_waktu['lotim'] ?>" required type="text" name="w_lotim"></td>
-                                        <td><input class="form-control" value="<?= $data_waktu['loteng'] ?>" required type="text" name="w_loteng"></td>
-                                    </tr>
-                                    <tr>
-                                        <th>Biaya</th>
-                                        <td><input class="form-control" value="<?= $data_biaya['mataram'] ?>" required type="text" name="b_mtr"></td>
-                                        <td><input class="form-control" value="<?= $data_biaya['klu'] ?>" required type="text" name="b_klu"></td>
-                                        <td><input class="form-control" value="<?= $data_biaya['lobar'] ?>" required type="text" name="b_lobar"></td>
-                                        <td><input class="form-control" value="<?= $data_biaya['lotim'] ?>" required type="text" name="b_lotim"></td>
-                                        <td><input class="form-control" value="<?= $data_biaya['loteng'] ?>" required type="text" name="b_loteng"></td>
-                                    </tr>
                                 </tbody>
                             </table>
                         </div>
 
                         <input type="hidden" readonly name="user" value="<?= $data_tw['id_user'] ?>">
-                        <a href="." class="btn btn-sm btn-info">Kembali</a>
-                        <input class="btn btn-primary btn-sm float-right ml-2" type="submit" value="Simpan">
-                        <input class="btn btn-danger btn-sm float-right" type="reset">
+                        <a href="." class="btn btn-md btn-info">Kembali</a>
+                        <input class="btn btn-primary btn-md float-right ml-2" type="submit" value="Simpan">
+                        <input class="btn btn-danger btn-md float-right" type="reset">
                     </form>
                 </div>
             </div>

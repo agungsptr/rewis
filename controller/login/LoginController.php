@@ -9,11 +9,12 @@ $validation = $user->login($username, $password);
 
 
 if ($validation->num_rows == 1) {
-    $id = mysqli_fetch_assoc($validation)['id'];
+    $user = mysqli_fetch_assoc($validation);
 
     session_start();
     $_SESSION['login']=true;
-    $_SESSION['login_id']=$id;
+    $_SESSION['login_id']=$user['id'];
+    $_SESSION['login_user']=$user['nama'];
     header('location:../../view/admin');
 } else {
     ?>

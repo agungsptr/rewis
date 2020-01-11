@@ -4,44 +4,24 @@ require_once('base/model.php');
 class TempatWisata extends Model {
     public $table = 'tempat_wisata';
     public $nama_tempat;
+    public $kab;
+    public $alamat;
+    public $deskripsi;
     public $foto;
+    public $biaya;
+    public $fasilitas;
     public $id_user;
 
     public function save()
     {
-        $this->atributs = ["'$this->nama_tempat'", "'$this->foto'", $this->id_user];
+        $this->atributs = ["'$this->nama_tempat'", "'$this->kab'", "'$this->alamat'", "'$this->deskripsi'", "'$this->foto'", "'$this->biaya'", "'$this->fasilitas'", $this->id_user];
         return parent::save();
     }
 
     public function update($id)
     {
         $this->fid = 'id';
-        $this->val = "nama_tempat='$this->nama_tempat', foto='$this->foto', id_user=$this->id_user";
+        $this->val = "nama_tempat='$this->nama_tempat', foto='$this->foto', id_user=$this->id_user, fasilitas=$this->fasilitas, biaya=$this->biaya";
         return parent::update($id);
-    }
-
-    public function viewMtr()
-    {
-        return parent::viewAll('data_mtr');
-    }
-
-    public function viewLobar()
-    {
-        return parent::viewAll('data_lobar');
-    }
-
-    public function viewKlu()
-    {
-        return parent::viewAll('data_klu');
-    }
-
-    public function viewLoteng()
-    {
-        return parent::viewAll('data_loteng');
-    }
-
-    public function viewLotim()
-    {
-        return parent::viewAll('data_lotim');
     }
 }

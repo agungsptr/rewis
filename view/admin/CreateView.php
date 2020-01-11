@@ -21,6 +21,21 @@ if (!isset($_SESSION['login'])) {
                         </div>
 
                         <div class="form-group">
+                            <label for="">Kabupaten</label>
+                            <input class="form-control" required type="text" name="kab">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="">Alamat</label>
+                            <input class="form-control" required type="text" name="alamat">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="">Deskripsi</label>
+                            <textarea name="deskripsi" id="" class="form-control" rows="3"></textarea>
+                        </div>
+
+                        <div class="form-group">
                             <label for="">Foto</label>
                             <div class="custom-file">
                                 <input type="file" class="custom-file-input" id="customFile" name="foto">
@@ -28,51 +43,44 @@ if (!isset($_SESSION['login'])) {
                             </div>
                         </div>
 
-                        <div class="form-group mt-4">
+                        <div class="form-group">
+                            <label for="">Jumlah Fasilitas</label>
+                            <input type="number" name="fasilitas" class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="">Biaya Masuk</label>
+                            <input type="number" name="biaya" class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="">Jarak Tempat Wisata dari</label>
                             <table class="table table-striped table-bordered table-hover">
                                 <thead>
                                     <tr>
-                                        <th></th>
-                                        <th>Mataram</th>
-                                        <th>KLU</th>
-                                        <th>LOBAR</th>
-                                        <th>LOTIM</th>
-                                        <th>LOTENG</th>
+                                        <th style="width: 18%;">Mataram</th>
+                                        <th>Lombok Utara</th>
+                                        <th>Lombok Barat</th>
+                                        <th>Lombok Timur</th>
+                                        <th style="width: 22%;">Lombok Tengah</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <th>Jarak</th>
                                         <td><input class="form-control" required type="text" name="j_mtr"></td>
                                         <td><input class="form-control" required type="text" name="j_klu"></td>
                                         <td><input class="form-control" required type="text" name="j_lobar"></td>
                                         <td><input class="form-control" required type="text" name="j_lotim"></td>
                                         <td><input class="form-control" required type="text" name="j_loteng"></td>
                                     </tr>
-                                    <tr>
-                                        <th>Waktu</th>
-                                        <td><input class="form-control" required type="text" name="w_mtr"></td>
-                                        <td><input class="form-control" required type="text" name="w_klu"></td>
-                                        <td><input class="form-control" required type="text" name="w_lobar"></td>
-                                        <td><input class="form-control" required type="text" name="w_lotim"></td>
-                                        <td><input class="form-control" required type="text" name="w_loteng"></td>
-                                    </tr>
-                                    <tr>
-                                        <th>Biaya</th>
-                                        <td><input class="form-control" required type="text" name="b_mtr"></td>
-                                        <td><input class="form-control" required type="text" name="b_klu"></td>
-                                        <td><input class="form-control" required type="text" name="b_lobar"></td>
-                                        <td><input class="form-control" required type="text" name="b_lotim"></td>
-                                        <td><input class="form-control" required type="text" name="b_loteng"></td>
-                                    </tr>
                                 </tbody>
                             </table>
                         </div>
 
-                        <input type="hidden" name="user" value="<?= $_SESSION['login_id']?>">
-                        <input class="btn btn-primary btn-sm float-right ml-2" type="submit" value="Simpan">
-                        <input class="btn btn-danger btn-sm float-right" type="reset">
-                        <a href="." class="btn btn-sm btn-info">Kembali</a>
+                        <input type="hidden" name="user" value="<?= $_SESSION['login_id'] ?>">
+                        <input class="btn btn-primary btn-md float-right ml-2" type="submit" value="Simpan">
+                        <input class="btn btn-danger btn-md float-right" type="reset">
+                        <a href="." class="btn btn-md btn-info">Kembali</a>
                     </form>
                 </div>
             </div>
