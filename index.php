@@ -63,7 +63,7 @@
             <div class="col">
                 <div class="card shadow mb-4" style="width: 20rem;">
                     <div class="inner">
-                        <img class="card-img-top" src="img/img-sample.jpg" alt="Card image cap">
+                        <img class="card-img-top" src="img/img-sample.jpg" alt="img">
                     </div>
 
                     <div class="card-body text-center">

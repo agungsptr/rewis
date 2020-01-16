@@ -9,8 +9,8 @@ if (isset($_SESSION['login'])) {
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-6">
-            <div class="card shadow mt-3">
-                <div class="card-header">
+            <div class="card shadow mt-3" style="border-radius: 26px">
+                <div class="card-header" style="border-top-left-radius: 26px; border-top-right-radius: 26px;">
                     <h5>Login</h5>
                 </div>
                 <div class="card-body">
