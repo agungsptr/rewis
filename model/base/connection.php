@@ -1,9 +1,9 @@
 <?php
 class Connection {
-    private $host = 'localhost';
-    private $username = 'root';
-    private $password = '';
-    private $database = 'rewis';
+    private $host = 'sql12.freesqldatabase.com';
+    private $username = 'sql12319357';
+    private $password = '5tUgAKpNaU';
+    private $database = 'sql12319357';
 
     public function DoCon()
     {
