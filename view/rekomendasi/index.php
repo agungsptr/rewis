@@ -13,7 +13,7 @@
                     <h5>Input Kriteria</h5>
                 </div>
                 <div class="card-body">
-                    <form action="/rewis/controller/rekomendasi/wp.php" method="POST">
+                    <form action="../../controller/rekomendasi/wp.php" method="POST">
                         <div class="form-group">
                             <label for="">Lokasi</label>
                             <select required name="lokasi" id="" class="form-control">
