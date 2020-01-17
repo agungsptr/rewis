@@ -1,0 +1,11 @@
+{
+    "name": "agungwtr/rewis",
+    "description": "Sistem rekomendasi tempat wisata di Lombok menggunakan metode WP",
+    "authors": [
+        {
+            "name": "agungsptr",
+            "email": "agung.eka1999@gmail.com"
+        }
+    ],
+    "require": {}
+}
