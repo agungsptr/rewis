@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jan 11, 2020 at 08:09 AM
+-- Generation Time: Jan 17, 2020 at 06:40 AM
 -- Server version: 10.4.10-MariaDB
 -- PHP Version: 7.3.12
 
@@ -196,19 +196,19 @@ CREATE TABLE `temp_calc` (
 --
 
 INSERT INTO `temp_calc` (`id`, `nama_tempat`, `foto`, `jarak`, `biaya`, `fasilitas`, `vektor_s`, `vektor_v`, `id_tw`) VALUES
-(105, 'Kuta', '', 41, 1000, 5, 0.016959591199586, 0, 1),
-(106, 'Selong Belanak', '', 45, 2000, 4, 0.014057211088362, 0, 2),
-(107, 'Pantai Mawun', '', 51, 1000, 4, 0.016987257792187, 0, 3),
-(108, 'Pantai Senggigi', '', 34, 1500, 5, 0.015769573216383, 0, 4),
-(109, 'Pantai Sire', '', 48, 5000, 3, 0.011157215834703, 0, 5),
-(110, 'Taman Narmada', '', 23, 5000, 4, 0.012954303153914, 0, 6),
-(111, 'Pantai Mekaki', '', 51, 5000, 3, 0.010934011381277, 0, 7),
-(112, 'Sendang Gile', '', 101, 5000, 2, 0.0099668871747734, 0, 8),
-(113, 'Loang Balok', '', 18, 2000, 2, 0.024037492838457, 0, 9),
-(114, 'Tiu Pupus', '', 62, 10000, 2, 0.0093080656621061, 0, 10),
-(115, 'Taman Mayura', '', 15, 2500, 3, 0.020714883373026, 0, 11),
-(116, 'Tanjung Bloam', '', 76, 150000, 3, 0.003080760693718, 0, 13),
-(117, 'Sembalun', '', 104, 5000, 3, 0.0086223397961112, 0, 14);
+(131, 'Kuta', '', 29, 1000, 5, 0.020199926980273, 0, 1),
+(132, 'Selong Belanak', '', 33, 2000, 4, 0.016659709643025, 0, 2),
+(133, 'Pantai Mawun', '', 39, 1000, 4, 0.019184750688722, 0, 3),
+(134, 'Pantai Senggigi', '', 53, 1500, 5, 0.014053072058142, 0, 4),
+(135, 'Pantai Sire', '', 59, 5000, 3, 0.010935328090634, 0, 5),
+(136, 'Taman Narmada', '', 20, 5000, 4, 0.01546247473555, 0, 6),
+(137, 'Pantai Mekaki', '', 78, 5000, 3, 0.0097799082663214, 0, 7),
+(138, 'Sendang Gile', '', 104, 5000, 2, 0.0098443413486256, 0, 8),
+(139, 'Loang Balok', '', 37, 2000, 2, 0.019593016895153, 0, 9),
+(140, 'Tiu Pupus', '', 73, 10000, 2, 0.0092121681647848, 0, 10),
+(141, 'Taman Mayura', '', 26, 2500, 3, 0.018684964703672, 0, 11),
+(142, 'Tanjung Bloam', '', 47, 150000, 3, 0.0043171496436315, 0, 13),
+(143, 'Sembalun', '', 76, 5000, 3, 0.0098820531496769, 0, 14);
 
 -- --------------------------------------------------------
 
@@ -228,7 +228,10 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `nama`, `username`, `password`) VALUES
-(1, 'agung', 'agung', '1234567890');
+(1, 'Agung Saputra', 'agungsptr', 'agungsptr000'),
+(17, 'echa', 'echa', 'echa000'),
+(18, 'dony', 'dony', 'dony000'),
+(19, 'gafar', 'gafar', 'gafar000');
 
 -- --------------------------------------------------------
 
@@ -326,13 +329,13 @@ ALTER TABLE `tempat_wisata`
 -- AUTO_INCREMENT for table `temp_calc`
 --
 ALTER TABLE `temp_calc`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=118;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=144;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- Constraints for dumped tables
