@@ -1,6 +1,6 @@
 <?php
 class Connection {
-    private $host = 'databases-auth.000webhost.com';
+    private $host = 'https://databases-auth.000webhost.com/';
     // private $host = 'localhost';
     private $username = 'id12267513_rewis';
     // private $username = 'root';
