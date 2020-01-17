@@ -49,6 +49,7 @@
 
     <div class="row ml-2">
         <?php
+        echo "<h1>ini muncul gak</h1>";
         require('model/TempatWisata.php');
         $tempatWisata = new TempatWisata;
         if (isset($_GET['search'])) {
