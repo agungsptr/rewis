@@ -11,7 +11,7 @@ $wFasilitas = $_POST['fasilitas'];
 $wBiaya = $_POST['biaya'];
 
 $TempatWisata = new TempatWisata;
-$data = $TempatWisata->viewAll($lokasi);
+$data = $TempatWisata->view($lokasi);
 
 //normalisasi bobot
 $sumBobot = $wJarak + $wFasilitas + $wBiaya;
@@ -24,15 +24,20 @@ $sumVektor_s=0;
 foreach ($data as $s) {
     $temp = new TempCalc;
     $temp->nama_tempat = $s['nama_tempat'];
+    $temp->kab = $s['kab'];
     $temp->foto = $s['foto'];
     $temp->jarak = $s['jarak'];
     $temp->fasilitas = $s['fasilitas'];
     $temp->biaya = $s['biaya'];
-    $temp->vektor_s = pow($s['jarak'], -$wJarak)*pow($s['fasilitas'], -$wFasilitas)*pow($s['biaya'], -$wBiaya);
+
+    $vektor_s = pow($s['jarak'], -$wJarak)*pow($s['fasilitas'], $wFasilitas)*pow($s['biaya'], -$wBiaya);
+    $vektor_s = $vektor_s == INF ? 0:$vektor_s;
+    $temp->vektor_s = $vektor_s;
+
     $temp->id_tw = $s['id'];
     $temp->save();
 
-    $sumVektor_s += $temp->vektor_s;
+    $sumVektor_s += $vektor_s;
 }
 
 $vektor = new TempCalc;
@@ -44,42 +49,3 @@ foreach ($vektor as $v) {
 }
 
 header('location:../../view/rekomendasi/result.php');
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// foreach ($data as $key) {
-//     var_dump($key);
-//     echo "</br>";
-// }
-

@@ -17,7 +17,7 @@ if (isset($_SESSION['login'])) {
                     <form action="../../controller/login/LoginController.php" method="POST">
                         <div class="form-group">
                             <label for="">Username</label>
-                            <input type="text" name="username" class="form-control">
+                            <input type="text" name="username" class="form-control" value="">
                         </div>
                         <div class="form-group">
                             <label for="">Password</label>

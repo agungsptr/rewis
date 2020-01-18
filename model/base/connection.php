@@ -1,13 +1,13 @@
 <?php
 class Connection {
-    private $host = 'https://databases-auth.000webhost.com/';
-    // private $host = 'localhost';
-    private $username = 'id12267513_rewis';
-    // private $username = 'root';
-    private $password = 'rewis#000';
-    // private $password = '';
-    private $database = 'id12267513_rewis';
-    // private $database = 'rewis';
+    // private $host = 'https://databases-auth.000webhost.com/';
+    private $host = 'localhost';
+    // private $username = 'id12267513_rewis';
+    private $username = 'root';
+    // private $password = 'rewis#000';
+    private $password = '';
+    // private $database = 'id12267513_rewis';
+    private $database = 'rewis';
 
     public function DoCon()
     {

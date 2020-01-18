@@ -16,8 +16,7 @@
         require('../../model/TempCalc.php');
 
         $temp = new TempCalc;
-        $items = $temp->best3();
-        $id = mysqli_fetch_assoc($items);
+        $items = $temp->best6();
 
         foreach ($items as $item) {
         ?>
@@ -32,23 +31,23 @@
                         <h5 class="card-title"><?= $item['nama_tempat'] ?></h5>
                         <div class="mb-2 text-left">
                             <div class="row">
-                                <div class="col-4">Lokasi</div>
-                                <div class="col-8">Lombok Barat</div>
+                                <div class="col-5">Kabupaten</div>
+                                <div class="col-7"><?=$item['kab']?></div>
                             </div>
                             <div class="row">
-                                <div class="col-4">Jarak</div>
-                                <div class="col-8"><?= $item['jarak'] ?> Km</div>
+                                <div class="col-5">Jarak</div>
+                                <div class="col-7"><?= $item['jarak'] ?> Km</div>
                             </div>
                             <div class="row">
-                                <div class="col-4">Jumlah Fasilitas</div>
-                                <div class="col-8"><?= $item['fasilitas'] ?></div>
+                                <div class="col-5">Jumlah Fasilitas</div>
+                                <div class="col-7"><?= $item['fasilitas'] ?></div>
                             </div>
                             <div class="row">
-                                <div class="col-4">Biaya</div>
-                                <div class="col-8">Rp. <?= $item['biaya'] ?></div>
+                                <div class="col-5">Biaya</div>
+                                <div class="col-7">Rp. <?= $item['biaya'] ?></div>
                             </div>
                         </div>
-                        <a href="<?= $item['id_tw'] ?>" class="btn btn-success pl-4 pr-4">Detail</a>
+                        <a href="../detail/show.php?id=<?= $item['id_tw'] ?>" class="btn btn-success pl-4 pr-4">Detail</a>
                     </div>
                 </div>
             </div>

@@ -33,7 +33,7 @@ $tempat = mysqli_fetch_assoc($tempat);
                         </div>
                     </div>
                     <div class="row justify-content-center">
-                        <a href="../../" class="btn btn-md btn-success pl-4 pr-4">Kembali</a>
+                        <a href="../rekomendasi/result.php" class="btn btn-md btn-success pl-4 pr-4">Kembali</a>
                     </div>
                 </div>
             </div>

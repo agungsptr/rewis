@@ -7,6 +7,7 @@ class TempCalc extends Model
 
     public $id_tw;
     public $nama_tempat;
+    public $kab;
     public $foto;
     public $jarak;
     public $biaya;
@@ -16,7 +17,7 @@ class TempCalc extends Model
 
     public function save()
     {
-        $this->atributs = ["'$this->nama_tempat'", "'$this->foto'","$this->jarak", "$this->biaya", "$this->fasilitas", "$this->vektor_s", "$this->vektor_v", $this->id_tw];
+        $this->atributs = ["'$this->nama_tempat'", "'$this->kab'", "'$this->foto'","$this->jarak", "$this->biaya", "$this->fasilitas", "$this->vektor_s", "$this->vektor_v", $this->id_tw];
         return parent::save();
     }
 
@@ -26,9 +27,9 @@ class TempCalc extends Model
         return mysqli_query(parent::DoCon(), $query);
     }
 
-    public function best3()
+    public function best6()
     {
-        $query = "SELECT * FROM $this->table ORDER BY vektor_v DESC LIMIT 3";
+        $query = "SELECT * FROM $this->table ORDER BY vektor_v DESC LIMIT 6";
         return mysqli_query(parent::DoCon(), $query);
     }
 

@@ -32,7 +32,7 @@ class Model extends Connection
         return mysqli_query(parent::DoCon(), $query);
     }
 
-    public function viewAll($view)
+    public function view($view)
     {
         $query = "SELECT * FROM $view";
         return mysqli_query(parent::DoCon(), $query);

@@ -56,7 +56,6 @@
         } else {
             $items = $tempatWisata->all();
         }
-        $id = mysqli_fetch_assoc($items);
 
         foreach ($items as $item) {
         ?>
@@ -64,7 +63,7 @@
             <div class="col">
                 <div class="card shadow mb-4" style="width: 20rem;">
                     <div class="inner">
-                        <img class="card-img-top" src="img/img-sample.jpg" alt="img">
+                        <img class="card-img-top" src="<?=$item['foto']?>" alt="img">
                     </div>
 
                     <div class="card-body text-center">
