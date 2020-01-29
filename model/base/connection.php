@@ -1,9 +1,9 @@
 <?php
 class Connection {
     private $host = 'localhost';
-    private $username = 'id12267513_rewis';
-    private $password = 'rewis#000';
-    private $database = 'id12267513_rewis';
+    private $username = 'root';
+    private $password = '';
+    private $database = 'rewis';
 
     public function DoCon()
     {
