@@ -49,7 +49,7 @@
 
     <div class="row ml-2">
         <?php
-        require('model/TempatWisata.php');
+        require_once('model/TempatWisata.php');
         $tempatWisata = new TempatWisata;
         if (isset($_GET['search'])) {
             $items = $tempatWisata->like('nama_tempat', $_GET['search']);
