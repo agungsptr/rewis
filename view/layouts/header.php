@@ -17,52 +17,51 @@
 </head>
 
 <body>
-    <nav class="navbar mav navbar-expand-lg navbar-dark bg-dark sticky-top">
-        <a class="navbar-brand" href="/rewis"><i class="fas fa-location-arrow"></i></a>
-        <a class="navbar-brand" href="/rewis">Rewis</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="/rewis">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/rewis/view/rekomendasi">Rekomendasi</a>
-                </li>
-                <?php
-                if (isset($_SESSION['login'])) {
-                ?>
+    <nav class="navbar navbar-expand-lg sticky-top mav">
+        <div class="container">
+            <a class="navbar-brand" href="/rewis"><i class="fas fa-location-arrow"></i>  Rewis</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="/rewis/view/admin/">Admin</a>
+                        <a class="nav-link" href="/rewis">Home</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/rewis/view/rekomendasi">Rekomendasi</a>
+                    </li>
+                    <?php
+                    if (isset($_SESSION['login'])) {
+                    ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/rewis/view/admin/">Admin</a>
+                        </li>
+                    <?php
+                    }
+                    ?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/rewis/view/about">About</a>
+                    </li>
+                </ul>
+                <?php
+                if (!isset($_SESSION['login'])) {
+                ?>
+                    <a class="nav-link" href="/rewis/view/login/">Login</a>
+                <?php
+                } else {
+                ?>
+                    <div class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white">
+                            <i class="fas fa-user-circle fa-2x"></i>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="/rewis/controller/login/LogoutController.php">Logout</a>
+                        </div>
+                    </div>
                 <?php
                 }
                 ?>
-                <li class="nav-item">
-                    <a class="nav-link" href="/rewis/view/about">About</a>
-                </li>
-            </ul>
-            <?php
-            if (!isset($_SESSION['login'])) {
-            ?>
-                <form action="/rewis/view/login/" class="form-inline my-2 my-lg-0">
-                    <button class="btn btn-sm btn-outline-success my-2 my-sm-0" type="submit">Login</button>
-                </form>
-            <?php
-            } else {
-            ?>
-                <div class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white">
-                        <i class="fas fa-user-circle fa-2x"></i>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="/rewis/controller/login/LogoutController.php">Logout</a>
-                    </div>
-                </div>
-            <?php
-            }
-            ?>
+            </div>
         </div>
     </nav>
